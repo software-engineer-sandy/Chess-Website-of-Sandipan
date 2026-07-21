@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Website of Sandipan</title>
+    <!-- Chessboard.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel: Chessboard -->
+        <div class="board-panel">
+            <div id="board" style="width: 500px"></div>
+            <!-- SVG overlay for arrows -->
+            <svg id="arrow-svg" width="500" height="500"></svg>
+        </div>
+
+        <!-- Right Panel: Controls & Review -->
+        <div class="control-panel">
+            <h1>Chess Website of Sandipan</h1>
+            
+            <!-- Creator Info Section -->
+            <div class="creator-info">
+                <div class="creator-profile">
+                    <img src="Gamer Sandy.jpg" alt="Photo of Sandipan Chowdhury" class="creator-img">
+                    <div class="creator-text">
+                        <p>Created and maintained by <strong>Sandipan Chowdhury</strong>.</p>
+                        <p style="margin-top: 8px; font-weight: bold;">Contact Details:</p>
+                        <ul>
+                            <li><a href="https://facebook.com/profile.php?id=61572271322559" target="_blank">Facebook</a></li>
+                            <li><a href="https://linkedin.com/in/sandipan-chowdhury-463636403" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://instagram.com/legend_sandy_789" target="_blank">Instagram</a></li>
+                            <li><a href="https://youtube.com/@lgnd-sndy-plays-games" target="_blank">My YT Channel</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings">
+                <label>Play as:</label>
+                <select id="player-color">
+                    <option value="w" selected>White</option>
+                    <option value="b">Black</option>
+                </select>
+
+                <label>Opponent ELO (100 - 3500):</label>
+                <input type="number" id="elo" value="1200" min="100" max="3500">
+                
+                <label>Assistance Mode:</label>
+                <select id="assistance">
+                    <option value="on">Play with assistance</option>
+                    <option value="off" selected>Play without assistance</option>
+                </select>
+
+                <button id="start-btn">Start Game</button>
+                <button id="review-btn" disabled>Match Review</button>
+            </div>
+
+            <div id="status">Status: Waiting to start...</div>
+
+            <!-- Review Section -->
+            <div id="review-container" class="hidden">
+                <h2>Match Review</h2>
+                <div class="stats">
+                    <!-- Dynamic stats will be injected here -->
+                </div>
+                <div id="move-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
